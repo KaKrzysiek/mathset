@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mathset"
+version= "1.0.3"
+authors = [
+	{ name = "Krzysztof Karczewski", email = "kakrzysiek13@gmail.com" },
+]
+description = "mathset is a Python module allowing user to perform basic mathematical operations on finite sets"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+	"Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://kakrzysiek.github.io/mathset"
+"Source" = "https://github.com/KaKrzysiek/mathset"
