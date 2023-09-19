@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mathset"
-version= "1.0.3"
+version= "1.0.4"
 authors = [
 	{ name = "Krzysztof Karczewski", email = "kakrzysiek13@gmail.com" },
 ]
