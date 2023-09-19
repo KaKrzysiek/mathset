@@ -25,6 +25,8 @@ def _str_tuple(arg):
             result.append(str(MathSet(i)))
         elif type(i) is tuple:
             result.append(_str_tuple(i))
+        elif type(i) is str:
+            result.append("\"" + i + "\"")
         else:
             result.append(str(i))
         result.append(", ")
@@ -55,6 +57,8 @@ class MathSet(set):
                 result.append(str(MathSet(i)))
             elif type(i) is tuple:
                 result.append(_str_tuple(i))
+            elif type(i) is str:
+                result.append("\"" + i + "\"")
             else:
                 result.append(str(i))
             result.append(", ")
@@ -86,7 +90,7 @@ class MathSet(set):
         result = MathSet()
         for i in self:
             result = result.union(i)
-        return result
+        return MathSet(result)
 
     def power_set(self):
         n = len(self)
@@ -120,6 +124,8 @@ class MathSet(set):
         return MathSet(result)
 
     def is_relation(self):
+        if self.is_empty():
+            return True
         for i in self:
             if isinstance(i, tuple):
                 if not len(i) == 2:
@@ -286,7 +292,7 @@ class MathSet(set):
             current = A.equivalence_class(i)
             result.update({frozenset(current)})
             used = used.union(current)
-        return result
+        return MathSet(result)
 
     def is_partition(self, A):
         self.__args_check(self.is_family_of_sets(), 2)
